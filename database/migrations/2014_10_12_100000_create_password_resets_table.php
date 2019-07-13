@@ -6,6 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreatePasswordResetsTable extends Migration
 {
+    public $tableName = 'migrations';
     /**
      * Run the migrations.
      *

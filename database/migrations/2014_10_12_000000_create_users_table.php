@@ -6,6 +6,8 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateUsersTable extends Migration
 {
+
+    public $tableName = 'users';
     /**
      * Run the migrations.
      *
@@ -13,14 +15,16 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create($this->tableName, function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->increments('id');
             $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->string('email');
+            $table->integer('age');
+            $table->char('sex', 1)->default('0');
+            $table->string('comment');
+            $table->binary('icon')->nullable()->default(null);
         });
     }
 
@@ -31,6 +35,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists($this->tableName);
     }
 }

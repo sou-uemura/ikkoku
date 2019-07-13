@@ -18,3 +18,4 @@ Route::get('/', 'WelcomeController@index');
 Route::get('auth/twitter', 'Auth\SocialAuthController@redirectToProvider');
 Route::get('auth/twitter/callback', 'Auth\SocialAuthController@handleProviderCallback');
 Route::get('auth/twitter/logout', 'Auth\SocialAuthController@logout');
+
