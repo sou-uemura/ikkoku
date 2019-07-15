@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 class SocialAuthController extends Controller
 {
     use AuthenticatesUsers;
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * ユーザーをTwitterの認証ページにリダイレクトする

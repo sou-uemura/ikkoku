@@ -21,10 +21,11 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('password');
             $table->string('email');
-            $table->integer('age');
-            $table->char('sex', 1)->default('0');
-            $table->string('comment');
+            $table->integer('age')->nullable()->default(null);
+            $table->char('sex')->nullable()->default(null);
+            $table->string('comment')->nullable()->default(null);
             $table->binary('icon')->nullable()->default(null);
+            $table->timestamps();
         });
     }
 
