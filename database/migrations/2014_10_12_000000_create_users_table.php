@@ -18,13 +18,17 @@ class CreateUsersTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('name');
-            $table->string('password');
+            $table->string('fullname')->nullable();
+            $table->string('nickname')->nullable();
+            $table->string('name')->nullable();
             $table->string('email');
+            $table->string('password');
             $table->integer('age')->nullable()->default(null);
             $table->char('sex')->nullable()->default(null);
-            $table->string('comment')->nullable()->default(null);
+            $table->string('comment', 255)->nullable()->default(null);
             $table->binary('icon')->nullable()->default(null);
+            $table->string('twitter_id')->nullable()->default(null);
+            $table->string('avatar')->nullable()->default(null);
             $table->timestamps();
         });
     }

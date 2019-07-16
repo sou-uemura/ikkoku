@@ -9,7 +9,12 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 class SocialAuthController extends Controller
 {
     use AuthenticatesUsers;
-    protected $redirectTo = '/';
+    protected $redirectTo = '/home';
+
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
 
     /**
      * ユーザーをTwitterの認証ページにリダイレクトする
@@ -35,6 +40,8 @@ class SocialAuthController extends Controller
             return redirect('auth/twitter');
         }
 
+        // dd($user);
+        
         $authUser = $this->findOrCreateUser($user);
 
         Auth::login($authUser, true);
@@ -51,8 +58,9 @@ class SocialAuthController extends Controller
         }
 
         return User::create([
-            'name' => $twitterUser->name,
-            'handle' => $twitterUser->nickname,
+            'fullname' => $twitterUser->name,
+            'email' => $twitterUser->email,
+            'nickname' => $twitterUser->nickname,
             'twitter_id' => $twitterUser->id,
             'avatar' => $twitterUser->avatar_original
         ]);
@@ -62,10 +70,5 @@ class SocialAuthController extends Controller
     {
         Auth::logout();
         return redirect()->route('login');
-    }
-
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
     }
 }

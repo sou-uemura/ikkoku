@@ -12,13 +12,20 @@
 */
 
 
-Route::get('/', 'WelcomeController@index');
+// Route::get('/', 'WelcomeController@index');
 
 
 Route::get('auth/twitter', 'Auth\SocialAuthController@redirectToProvider');
 Route::get('auth/twitter/callback', 'Auth\SocialAuthController@handleProviderCallback');
 Route::get('auth/twitter/logout', 'Auth\SocialAuthController@logout');
 
+Route::get('/', 'HomeController@index');
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/home', 'WelcomeController@index')->name('home');
+
+
+Route::resource('questions', 'QuestionController', ['except' => ['index']]);
+

@@ -25,9 +25,9 @@ class UsersTableSeeder extends Seeder
                 'email' => $faker->email(),
                 'age' => $faker->numberBetween($min=0,$max=100),
                 'sex' => $faker->numberBetween($min=0,$max=1),
-                'comment' => $faker->paragraphs(),
+                'comment' => $faker->paragraph(),
                 'icon' => $faker->image(),
-                'published_at' => Carbon::today()
+                'created_at' => Carbon::today()
             ]);
         }
     }
