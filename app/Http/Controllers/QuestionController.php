@@ -15,6 +15,7 @@ class QuestionController extends Controller
     public function index()
     {
         $questions = Question::all();
+        $questions->load('user');
         
         return view('questions.index',[
             'questions' => $questions,
@@ -28,7 +29,9 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        //
+        return view('questions.create',[
+            'questions' => $questions,
+        ]);
     }
 
     /**

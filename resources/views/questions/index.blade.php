@@ -14,7 +14,21 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    @foreach($questions as $question)
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $question->title }}</h5>
+                                <h5 class="card-title">
+                                  投稿者:{{ $question->user->name }}
+                                </h5>
+                                <h5 class="card-title">
+                                  年齢:{{ $question->user->age }}
+                                </h5>
+                                <p class="card-text">{{ $question->content }}</p>
+                                <a href="#" class="btn btn-primary">詳細</a>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
