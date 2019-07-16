@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Auth;
 use Illuminate\Database\Eloquent\Model;
 
 class AnswerRequest extends Model

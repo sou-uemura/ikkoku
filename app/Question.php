@@ -20,4 +20,6 @@ class Question extends Model
         'title', 'content', 'answer_request_id','user_id',
     ];
 
+    public $timestamps = false;
+
 }
