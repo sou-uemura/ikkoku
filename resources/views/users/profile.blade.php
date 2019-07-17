@@ -5,8 +5,15 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">プロフィール</div>
+                <div class="card-header">profile
 
+                    @if ( $user->id  ===  Auth::id() )
+                        <form action="{{ 'edit' }}" method="POST">
+                            <button type="submit" class="btn btn-primary">編集</button>
+                        </form>
+                    @endif
+
+                </div>
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
