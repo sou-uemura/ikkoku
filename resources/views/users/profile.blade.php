@@ -9,7 +9,9 @@
 
                     @if ( $user->id  ===  Auth::id() )
                         <form action="{{ 'edit' }}" method="POST">
+                        
                             <button type="submit" class="btn btn-primary">編集</button>
+                            @csrf
                         </form>
                     @endif
 

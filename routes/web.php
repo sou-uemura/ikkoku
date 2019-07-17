@@ -26,7 +26,7 @@ Route::post('/questions/store', 'QuestionController@store')->name('store');
 
 Route::get('/questions/{question}', 'QuestionController@show')->name('show');
 Route::get('/user/{user}', 'UserController@show')->name('profile');
-Route::get('/user/edit', 'UserController@edit')->name('edit');
+Route::post('/user/edit', 'UserController@edit')->name('edit');
 
 
 

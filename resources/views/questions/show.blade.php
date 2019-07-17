@@ -16,7 +16,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $question->title }}</h5>
-                                    <a href="{{ action('UserController@show', $question->id) }}">
+                                    <a href="{{ action('UserController@show', $question->user->id) }}">
                                         投稿者:{{ $question->user->name }}
                                     </a>
                                 <p class="card-text">{{ $question->content }}</p>
