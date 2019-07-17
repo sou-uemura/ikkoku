@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Question;
+use App\Http\Requests\QuestionRequest;
+use  App\Http\Controllers\Auth;
+
 
 class QuestionController extends Controller
 {
@@ -39,9 +42,15 @@ class QuestionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(QuestionRequest $request)
     {
-        //
+        $question = new Question;
+        $question->title = $request->title;
+        $question->content = $request->content;
+        $question->user_id = $request->user_id;
+        $question->save();
+
+        return redirect('/questions');
     }
 
     /**

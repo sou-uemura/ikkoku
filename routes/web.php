@@ -27,6 +27,9 @@ Route::get('/home', 'WelcomeController@index')->name('home');
 
 Route::get('/questions', 'QuestionController@index')->name('questions');
 Route::get('/questions/create', 'QuestionController@create')->name('questions.create');
+Route::post('/questions/store', 'QuestionController@store')->name('store');
+// Route::post('/questions/store', 'QuestionRequest@authorize');
+
 
 // Route::resource('questions', 'QuestionController', ['except' => ['index']]);
 
