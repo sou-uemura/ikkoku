@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">質問詳細</div>
+                <div class="card-header">プロフィール</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -15,11 +15,12 @@
                     @endif
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">{{ $question->title }}</h5>
-                                    <a href="{{ action('UserController@show', $question->id) }}">
-                                        投稿者:{{ $question->user->name }}
-                                    </a>
-                                <p class="card-text">{{ $question->content }}</p>
+                                <h5 class="card-title">
+                                  名前：{{ $user->name }}
+                                </h5>
+                                <h5 class="card-title">
+                                  twitterプロフィール：{{ $user->name }}       {{-- twitter_idにあとで変更 --}}
+                                </h5>
                             </div>
                         </div>
                 </div>
