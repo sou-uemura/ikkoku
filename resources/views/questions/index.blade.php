@@ -21,11 +21,8 @@
                                 <h5 class="card-title">
                                   投稿者:{{ $question->user->name }}
                                 </h5>
-                                <h5 class="card-title">
-                                  年齢:{{ $question->user->age }}
-                                </h5>
                                 <p class="card-text">{{ $question->content }}</p>
-                                <a href="#" class="btn btn-primary">詳細</a>
+                            <a href="{{ route('show', $question->id)}}" class="btn btn-primary">詳細</a>
                             </div>
                         </div>
                     @endforeach
