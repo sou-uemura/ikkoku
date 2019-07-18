@@ -9,6 +9,23 @@ use  App\Http\Controllers\Auth;
 
 class AnswerRequestController extends Controller
 {
+     /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index(AnswerRequestRequest $request)
+    {
+
+        return view('answerrequests.index', [
+            'answerrequest' => $answerrequest
+            ]);  
+              
+    }
+
+
+
+
     /**
      * Show the application dashboard.
      *
