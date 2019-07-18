@@ -20,6 +20,7 @@ class CreateAnswerRequestsTable extends Migration
             $table->string('content');
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('question_id');
+            $table->timestamps();
 
             $table->index(["user_id"], 'fk_user_idx');
 

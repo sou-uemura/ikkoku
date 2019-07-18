@@ -8,7 +8,7 @@
                 <div class="card-header">profile
 
                     @if ( $user->id  ===  Auth::id() )
-                        <form action="{{ 'edit' }}" method="POST">
+                        <form action="{{ route('users.edit') }}" method="POST">
                         
                             <button type="submit" class="btn btn-primary">編集</button>
                             @csrf

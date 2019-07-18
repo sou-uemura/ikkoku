@@ -16,7 +16,7 @@
                                 </ul>
                             </div>
                         @endif
-                        <form action="{{ 'store' }}" method="POST">
+                        <form action="{{ route('questions.store') }}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label for="exampleInputEmail1">題名</label>

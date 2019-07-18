@@ -20,16 +20,18 @@ Route::get('/', 'HomeController@index');
 
 Auth::routes();
 
-Route::get('/questions', 'QuestionController@index')->name('questions');
+// index, show, create, store, update, deleteだよ〜
+
+Route::get('/questions', 'QuestionController@index')->name('questions.index');
+Route::get('/questions/{question}', 'QuestionController@show')->name('questions.show');
 Route::get('/questions/create', 'QuestionController@create')->name('questions.create');
-Route::post('/questions/store', 'QuestionController@store')->name('store');
+Route::post('/questions/store', 'QuestionController@store')->name('questions.store');
 
-Route::get('/questions/{question}', 'QuestionController@show')->name('show');
-Route::get('/user/{user}', 'UserController@show')->name('profile');
-Route::post('/user/edit', 'UserController@edit')->name('edit');
-
+Route::get('/user/{user}', 'UserController@show')->name('users.plofile');
+Route::post('/user/edit', 'UserController@edit')->name('users.edit');
 
 
+Route::post('/answerrequest', 'AnswerRequestController@store')->name('answerrequest.store');
 
-// Route::resource('questions', 'QuestionController', ['except' => ['index']]);
+
 
