@@ -51,17 +51,16 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(User $user)
+    public function update(User $user, Request $request)
 
     {
 
-        $user = new User;
-        $user->name = $user->name;
-        $user->twitter_id = $user->twitter_id;
-        $user->email = $user->email;
+        $user->name = $request->name;
+        $user->twitter_id = $request->twitter_id;
+        $user->email = $request->email;
         $user->save();
 
-        return redirect('/user/{user}');
+        return redirect()->route('users.profile', $user->id);
         
     }
 

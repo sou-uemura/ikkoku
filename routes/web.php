@@ -32,7 +32,7 @@ Route::post('/questions', 'QuestionController@store')->name('questions.store');
 Route::get('/user/{user}', 'UserController@show')->name('users.profile');
 Route::get('/user/{user}/edit', 'UserController@edit')->name('users.edit');
 
-Route::get('user/{user}/update', 'UserController@update')->name('users.update');
+Route::post('user/{user}/update', 'UserController@update')->name('users.update');
 
 
 Route::get('/answerrequest', 'AnswerRequestController@index')->name('answerrequest.index');

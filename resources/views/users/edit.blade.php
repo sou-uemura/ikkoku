@@ -15,8 +15,8 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <form action="{{ route('users.update', $user->id) }}" method="GET">
-                                <input type="hidden" name="_method" value="get">
+                            <form action="{{ route('users.update', $user->id) }}" method="post">
+                                @csrf
                                 <h5 class="card-title">
                                     名前：<input type="text" name="name" value="{{ $user->name }}">
                                 </h5>

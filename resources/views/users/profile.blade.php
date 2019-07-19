@@ -26,7 +26,7 @@
                                   名前：{{ $user->name }}
                                 </h5>
                                 <h5 class="card-title">
-                                  twitterプロフィール：{{ $user->twitter_id }}       {{-- twitter_idにあとで変更 --}}
+                                  twitterID：{{ $user->twitter_id }}       {{-- twitter_idにあとで変更 --}}
                                 </h5>
                             </div>
                         </div>
