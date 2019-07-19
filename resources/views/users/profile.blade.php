@@ -26,7 +26,7 @@
                                   名前：{{ $user->name }}
                                 </h5>
                                 <h5 class="card-title">
-                                  twitterID：{{ $user->twitter_id }}       {{-- twitter_idにあとで変更 --}}
+                                  twitterID：<a href="https://twitter.com/{{ $user->twitter_id }}">＠{{ $user->twitter_id }}</a>   
                                 </h5>
                             </div>
                         </div>
