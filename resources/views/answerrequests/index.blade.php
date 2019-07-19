@@ -14,16 +14,18 @@
                         </div>
                     @endif
 
-                    @foreach($questions as $question)
+                    @foreach($answerrequests as $answerrequest)
                         <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $question->title }}</h5>
-                                <h5 class="card-title">
-                                  投稿者:{{ $question->user->name }}
-                                </h5>
-                                <p class="card-text">{{ $question->content }}</p>
-                            <a href="{{ route('questions.show', $question->id)}}" class="btn btn-primary">詳細</a>
-                            </div>
+                            <h5 class="card-title">
+                                {{ $answerrequest->user_id }}
+                            </h5>
+                            <h5 class="card-title">
+                                {{ $answerrequest->content }}
+                            </h5>
+
+                            <a href="">twitterへ</a>
+                            <a href="">評価</a>
+
                         </div>
                     @endforeach
                 </div>

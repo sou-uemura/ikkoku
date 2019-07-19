@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Auth;
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class AnswerRequest extends Model
@@ -17,4 +18,8 @@ class AnswerRequest extends Model
         'content', 'user_id', 'question_id',
     ];
 
+    public function user()
+    {
+        return $this->belongsTo('App\AnswerRequest', 'user_id');
+    }
 }

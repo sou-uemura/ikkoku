@@ -28,10 +28,14 @@ Route::get('/questions/create', 'QuestionController@create')->name('questions.cr
 Route::get('/questions/{question}', 'QuestionController@show')->name('questions.show');
 Route::post('/questions', 'QuestionController@store')->name('questions.store');
 
-Route::get('/user/{user}', 'UserController@show')->name('users.plofile');
-Route::post('/user/edit', 'UserController@edit')->name('users.edit');
 
-Route::get('/answerrequest/index', 'AnswerRequestController@index')->name('answerrequest.index');
+Route::get('/user/{user}', 'UserController@show')->name('users.profile');
+Route::get('/user/{user}/edit', 'UserController@edit')->name('users.edit');
+
+Route::get('user/{user}/update', 'UserController@update')->name('users.update');
+
+
+Route::get('/answerrequest', 'AnswerRequestController@index')->name('answerrequest.index');
 Route::post('/answerrequest', 'AnswerRequestController@store')->name('answerrequest.store');
 
 

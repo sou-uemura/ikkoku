@@ -30,7 +30,7 @@ class UserController extends Controller
 
 
 
-/**
+    /**
      * Display the specified resource.
      *
      * @param  int  $id
@@ -42,6 +42,26 @@ class UserController extends Controller
         return view('users.edit', [
             'user' => $user
         ]);  
+        
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(User $user)
+
+    {
+
+        $user = new User;
+        $user->name = $user->name;
+        $user->twitter_id = $user->twitter_id;
+        $user->email = $user->email;
+        $user->save();
+
+        return redirect('/user/{user}');
         
     }
 

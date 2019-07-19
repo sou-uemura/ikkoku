@@ -14,13 +14,15 @@ class AnswerRequestController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index(AnswerRequestRequest $request)
+    public function index()
     {
+        $answerrequests = AnswerRequest::all();
+        $answerrequests->load('user');
 
         return view('answerrequests.index', [
-            'answerrequest' => $answerrequest
-            ]);  
-              
+            'answerrequests' => $answerrequests
+        ]);  
+
     }
 
 
