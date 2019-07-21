@@ -28,6 +28,12 @@
                                 <h5 class="card-title">
                                   twitterID：<a href="https://twitter.com/{{ $user->twitter_id }}">＠{{ $user->twitter_id }}</a>   
                                 </h5>
+                                <h5 class="card-title">
+                                  年齢：{{ $user->age }}
+                                </h5>
+                                <h5 class="card-title">
+                                  一言：{{ $user->comment }}
+                                </h5>
                             </div>
                         </div>
                 </div>

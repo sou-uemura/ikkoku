@@ -57,7 +57,7 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         <a href="{{ route('questions.create') }}" class="dropdown-item">質問投稿</a>
                                         <a href="{{ route('questions.index') }}" class="dropdown-item">質問一覧</a>
-                                        <a href="{{ route('answerrequest.index') }}" class="dropdown-item">回答リクエスト</a>
+                                        <a href="{{ route('answerrequest.index') }}" class="dropdown-item">リクエスト確認</a>
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

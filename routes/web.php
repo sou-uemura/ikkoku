@@ -38,5 +38,7 @@ Route::post('user/{user}/update', 'UserController@update')->name('users.update')
 Route::get('/answerrequest', 'AnswerRequestController@index')->name('answerrequest.index');
 Route::post('/answerrequest', 'AnswerRequestController@store')->name('answerrequest.store');
 
+Route::get('/score', 'ScoreController@index')->name('score');
+Route::post('score/{user}/update', 'ScoreController@update')->name('score.update');
 
 

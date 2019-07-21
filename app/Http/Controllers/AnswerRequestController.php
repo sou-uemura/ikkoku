@@ -5,7 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\AnswerRequest;
 use App\Http\Requests\AnswerRequestRequest;
-use  App\Http\Controllers\Auth;
+use App\Http\Controllers\Auth;
+use App\Http\Controllers\User;
+use App\Http\Controllers\Question;
+
+
+
 
 class AnswerRequestController extends Controller
 {
@@ -16,11 +21,12 @@ class AnswerRequestController extends Controller
      */
     public function index()
     {
-        $answerrequests = AnswerRequest::all();
-        $answerrequests->load('user');
+
+        $answerrequests = AnswerRequest::;
 
         return view('answerrequests.index', [
-            'answerrequests' => $answerrequests
+            'answerrequests' => $answerrequests,
+
         ]);  
 
     }

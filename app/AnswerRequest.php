@@ -22,4 +22,8 @@ class AnswerRequest extends Model
     {
         return $this->belongsTo('App\AnswerRequest', 'user_id');
     }
+
+    
+
+
 }

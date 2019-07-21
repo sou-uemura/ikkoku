@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">リクエスト一覧</div>
+                <div class="card-header">リクエスト確認</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -25,7 +25,6 @@
 
                             <a href="">twitterへ</a>
                             <a href="">評価</a>
-
                         </div>
                     @endforeach
                 </div>

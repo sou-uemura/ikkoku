@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">profile編集 </div>
+                <div class="card-header">評価画面</div>
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -15,26 +15,21 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <form action="{{ route('users.update', $user->id) }}" method="post">
+                            <form action="{{ route('score.update') }}" method="post">
                                 @csrf
                                 <h5 class="card-title">
-                                    名前：<input type="text" name="name" value="{{ $user->name }}">
+                                    わかりやすさ：<input type="text" name="easy">
                                 </h5>
                                 <h5 class="card-title">
-                                    twitterID：@<input type="text" name="twitter_id" value="{{ $user->twitter_id }}">  
+                                    スピード：<input type="text" name="speed">  
                                 </h5>
                                 <h5 class="card-title">
-                                    年齢：<input type="text" name="age" value="{{ $user->age }}">  
+                                    マナー：<input type="text" name="manner">  
                                 </h5> 
                                 <h5 class="card-title">
-                                    メールアドレス：<input type="text" name="email" value="{{ $user->email }}">  
+                                    解決度：<input type="text" name="understand">  
                                 </h5>
-                                <h5 class="card-title">
-                                    一言：<br><textarea name="comment">{{ $user->comment }}</textarea> 
-                                </h5>
-                                
-                               
-                                <button type="submit" class="btn btn-primary">確定</button> 
+                                <button type="submit" class="btn btn-primary">送信</button> 
                             </form>
 
                         </div>

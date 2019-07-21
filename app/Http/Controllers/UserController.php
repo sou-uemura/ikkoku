@@ -7,7 +7,7 @@ use App\User;
 use App\Question;
 use App\Http\Requests\UserRequest;
 use  App\Http\Controllers\Auth;
-// use Illuminate\Support\Facades\Auth;
+
 
 class UserController extends Controller
 {
@@ -58,6 +58,8 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->twitter_id = $request->twitter_id;
         $user->email = $request->email;
+        $user->age = $request->age;
+        $user->comment = $request->comment;
         $user->save();
 
         return redirect()->route('users.profile', $user->id);
