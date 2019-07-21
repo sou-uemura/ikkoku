@@ -20,14 +20,16 @@
                             @if($answerrequest)
                             <div class="card">
                                 <h5 class="card-title">
+                                    <a href="{{ action('UserController@show', $answerrequest->user->id) }}">
                                     {{ $answerrequest->user->name }}
+                                    </a>
                                 </h5>
                                 <h5 class="card-title">
                                     {{ $answerrequest->content }}
                                 </h5>
 
                                 <a href="https://twitter.com/{{ $answerrequest->user->twitter_id }}">twitterへ</a>
-                                <a href="">評価</a>
+                                <a href="{{ route('scores.create', $answerrequest->user_id) }}">評価</a>
                             </div>
                             @endif
                         @endforeach

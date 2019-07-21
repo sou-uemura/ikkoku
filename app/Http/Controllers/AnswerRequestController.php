@@ -29,7 +29,10 @@ class AnswerRequestController extends Controller
             return view('answerrequests.index', [
                 'questions' => $questions
             ]);  
-        } 
+        } else {
+            // Todo ログインしてないとき
+            // redire
+        }
 
     }
 

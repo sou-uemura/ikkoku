@@ -6,17 +6,18 @@ use Illuminate\Http\Request;
 use App\Score;
 use App\User;
 use App\Http\Requests\ScoreRequest;
-use  App\Http\Controllers\Auth;
+use App\Http\Controllers\Auth;
+use App\Http\Controllers\Answerrequest;
+
 
 class ScoreController extends Controller
 {
 
-    public function index() 
-    {
-             
+    public function create(User $user) 
+    { 
 
-        return view('scores.score' [
-            'user' => $user
+        return view('scores.create' ,[
+            'answerrequest' => $answerrequest
         ]);
 
     }
