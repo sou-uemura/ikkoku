@@ -26,7 +26,7 @@
                                     {{ $answerrequest->content }}
                                 </h5>
 
-                                <a href="">twitterへ</a>
+                                <a href="https://twitter.com/{{ $answerrequest->user->twitter_id }}">twitterへ</a>
                                 <a href="">評価</a>
                             </div>
                             @endif
