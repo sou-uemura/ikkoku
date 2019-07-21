@@ -17,7 +17,7 @@ class Question extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'content', 'answer_request_id','user_id',
+        'title', 'content', 'user_id',
     ];
 
     public $timestamps = false;
@@ -26,4 +26,8 @@ class Question extends Model
         return $this->belongsTo(\App\User::class,'user_id');
     }
 
+    public function answerRequests()
+    {
+        return $this->hasMany('App\AnswerRequest');
+    }
 }

@@ -15,7 +15,7 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <form action="{{ route('score.update') }}" method="post">
+                            <form action="{{ route('score.update', $user->id) }}" method="post">
                                 @csrf
                                 <h5 class="card-title">
                                     わかりやすさ：<input type="text" name="easy">

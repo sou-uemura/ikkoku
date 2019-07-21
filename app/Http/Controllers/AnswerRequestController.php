@@ -21,13 +21,15 @@ class AnswerRequestController extends Controller
      */
     public function index()
     {
+        $currentUser = \Auth::user();
 
-        $answerrequests = AnswerRequest::;
+        if($currentUser) {
+            $questions = $currentUser->questions;
 
-        return view('answerrequests.index', [
-            'answerrequests' => $answerrequests,
-
-        ]);  
+            return view('answerrequests.index', [
+                'questions' => $questions
+            ]);  
+        } 
 
     }
 

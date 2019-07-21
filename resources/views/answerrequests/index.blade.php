@@ -14,18 +14,23 @@
                         </div>
                     @endif
 
-                    @foreach($answerrequests as $answerrequest)
-                        <div class="card">
-                            <h5 class="card-title">
-                                {{ $answerrequest->user_id }}
-                            </h5>
-                            <h5 class="card-title">
-                                {{ $answerrequest->content }}
-                            </h5>
+                    @foreach($questions as $question) 
+                        @foreach($question->answerRequests as $answerrequest)
+                        {{-- @dd($answerrequest) --}}
+                            @if($answerrequest)
+                            <div class="card">
+                                <h5 class="card-title">
+                                    {{ $answerrequest->user->name }}
+                                </h5>
+                                <h5 class="card-title">
+                                    {{ $answerrequest->content }}
+                                </h5>
 
-                            <a href="">twitterへ</a>
-                            <a href="">評価</a>
-                        </div>
+                                <a href="">twitterへ</a>
+                                <a href="">評価</a>
+                            </div>
+                            @endif
+                        @endforeach
                     @endforeach
                 </div>
             </div>

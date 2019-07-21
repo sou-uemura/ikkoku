@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Score;
+use App\User;
 use App\Http\Requests\ScoreRequest;
 use  App\Http\Controllers\Auth;
 
@@ -12,7 +13,12 @@ class ScoreController extends Controller
 
     public function index() 
     {
-        return view('scores.score');
+             
+
+        return view('scores.score' [
+            'user' => $user
+        ]);
+
     }
 
 

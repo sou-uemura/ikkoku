@@ -24,7 +24,6 @@ class QuestionsTableSeeder extends Seeder
             Question::create([
                 'title' => $faker->title,
                 'content' => $faker->sentence,
-                'answer_request_id' => $faker->randomDigitNotNull,
                 'user_id' => $faker->randomDigitNotNull,
 
             ]);

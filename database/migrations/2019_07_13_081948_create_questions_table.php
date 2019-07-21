@@ -20,7 +20,6 @@ class CreateQuestionsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('content');
-            $table->unsignedInteger('answer_request_id')->nullable()->default(null);
             $table->unsignedInteger('user_id');
 
             $table->index(["user_id"], 'fk_use_idx');
