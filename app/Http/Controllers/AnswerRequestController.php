@@ -55,4 +55,19 @@ class AnswerRequestController extends Controller
 
         return redirect('/questions');
     }
+
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(AnswerRequest $answerrequest)
+    {
+
+        $answerrequest->delete();
+
+        return redirect()->route('answerrequest.index');
+    }
 }

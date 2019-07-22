@@ -30,6 +30,11 @@
 
                                 <a href="https://twitter.com/{{ $answerrequest->user->twitter_id }}">twitterへ</a>
                                 <a href="{{ route('scores.create', $answerrequest->user_id) }}">評価</a>
+                                <form action="{{ route('answerrequest.destroy', $answerrequest->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input type="submit" value="削除" class="btn btn-danger btn-sm">
+                                </form>
                             </div>
                             @endif
                         @endforeach

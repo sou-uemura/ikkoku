@@ -29,7 +29,7 @@ Route::get('/questions/{question}', 'QuestionController@show')->name('questions.
 Route::post('/questions', 'QuestionController@store')->name('questions.store');
 Route::get('/questions/{question}/edit', 'QuestionController@edit')->name('questions.edit');
 Route::post('/questions/{question}/update', 'QuestionController@update')->name('questions.update');
-Route::delete('/questions/{question}/delete', 'QuestionController@destroy')->name('questions.destroy');
+Route::delete('/questions/{question}', 'QuestionController@destroy')->name('questions.destroy');
 
 
 
@@ -42,6 +42,8 @@ Route::post('user/{user}/update', 'UserController@update')->name('users.update')
 
 Route::get('/answerrequest', 'AnswerRequestController@index')->name('answerrequest.index');
 Route::post('/answerrequest', 'AnswerRequestController@store')->name('answerrequest.store');
+Route::delete('/answerrequest/{answerrequest}', 'AnswerRequestController@destroy')->name('answerrequest.destroy');
+
 
 Route::get('/score/{user}/create', 'ScoreController@create')->name('scores.create');
 Route::post('score/{user}/update', 'ScoreController@update')->name('scores.update');
