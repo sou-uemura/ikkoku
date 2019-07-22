@@ -40,29 +40,51 @@
             </div>
 
             <div class="card">
-                <div class="card-header">評価</div>
+                    <div class="card-header">投稿中の質問</div>
                     <div class="card-body">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">
-                                    わかりやすさ： {{ $scores['easy'] }}
-                                </h5>
-                                <h5 class="card-title">
-                                    スピード： {{ $scores['speed'] }}
-                                </h5>
-                                <h5 class="card-title">
-                                    マナー：{{ $scores['manner'] }}
-                                </h5>
-                                <h5 class="card-title">
-                                    解決度：{{ $scores['understand'] }}
-                                </h5>
-                                <h5 class="card-title">
-                                    合計：
-                                </h5>
+                                @foreach($user->questions as $question)
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ $question->title }}</h5>
+                                            <h5 class="card-title">
+                                            投稿者:{{ $question->user->name }}
+                                            </h5>
+                                            <p class="card-text">{{ $question->content }}</p>
+                                            <a href="{{ route('questions.show', $question->id)}}" class="btn btn-primary">詳細</a>
+                                        </div>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
-                
+                </div>
+
+
+            <div class="card">
+                <div class="card-header">評価</div>
+                <div class="card-body">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                わかりやすさ： {{ $scores['easy'] }}
+                            </h5>
+                            <h5 class="card-title">
+                                スピード： {{ $scores['speed'] }}
+                            </h5>
+                            <h5 class="card-title">
+                                マナー：{{ $scores['manner'] }}
+                            </h5>
+                            <h5 class="card-title">
+                                解決度：{{ $scores['understand'] }}
+                            </h5>
+                            <h5 class="card-title">
+                                合計：
+                            </h5>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

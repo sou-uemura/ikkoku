@@ -30,9 +30,6 @@
                                 <h5 class="card-title">
                                     解決度：<input type="number" name="understand" min="0" max="25" value="0">  
                                 </h5>
-                                <h5 class="card-title">
-                                    合計：
-                                </h5>
                                 <button type="submit" class="btn btn-primary">送信</button> 
                             </form>
 

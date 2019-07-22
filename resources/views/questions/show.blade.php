@@ -30,32 +30,34 @@
                         </div>
                 </div>
 
-                <div class="card">
-                        <div class="card-header">リクエストを送る</div>
-                            <div class="card-body">
-                                @if (session('status'))
-                                    <div class="alert alert-success" role="alert">
-                                        {{ session('status') }}
-                                    </div>
-                                @endif
-                                <div class="card">
-                                    <div class="card-body">
-                                        <form action="{{ route('answerrequest.store') }}" method="POST">
-                                                @csrf
-                                                <div class="form-group">
-                                                    <label for="content">一言</label>
-                                                    <textarea class="form-control" name="content" id="comment" rows="5"></textarea>
-                                                </div>
-                                                <input type="hidden" name="user_id" value="{{ Auth::id() }}">
-                                                <input type="hidden" name="question_id" value="{{ $question->id }}">
-                                            
-                                                <button type="submit" class="btn btn-primary">リクエストを送信</button>
-                                        </form>
+                @if ( $question->user_id != Auth::id() )
+                    <div class="card">
+                            <div class="card-header">リクエストを送る</div>
+                                <div class="card-body">
+                                    @if (session('status'))
+                                        <div class="alert alert-success" role="alert">
+                                            {{ session('status') }}
+                                        </div>
+                                    @endif
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <form action="{{ route('answerrequest.store') }}" method="POST">
+                                                    @csrf
+                                                    <div class="form-group">
+                                                        <label for="content">一言</label>
+                                                        <textarea class="form-control" name="content" id="comment" rows="5"></textarea>
+                                                    </div>
+                                                    <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+                                                    <input type="hidden" name="question_id" value="{{ $question->id }}">
+                                                
+                                                    <button type="submit" class="btn btn-primary">リクエストを送信</button>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                    </div>
-            </div>
+                        </div>
+                </div>
+            @endif
         </div>
     </div>
 </div>
