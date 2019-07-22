@@ -38,6 +38,29 @@
                         </div>
                 </div>
             </div>
+
+            <div class="card">
+                <div class="card-header">評価</div>
+                    <div class="card-body">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    わかりやすさ： {{ $scores['easy'] }}
+                                </h5>
+                                <h5 class="card-title">
+                                    スピード： {{ $scores['speed'] }}
+                                </h5>
+                                <h5 class="card-title">
+                                    マナー：{{ $scores['manner'] }}
+                                </h5>
+                                <h5 class="card-title">
+                                    解決度：{{ $scores['understand'] }}
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
         </div>
     </div>
 </div>

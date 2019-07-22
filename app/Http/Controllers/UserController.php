@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Question;
+use App\Score;
 use App\Http\Requests\UserRequest;
 use  App\Http\Controllers\Auth;
 
@@ -17,15 +18,31 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(User $user, Score $score) 
 
     {
+        $scores = [];
+
+        $easy = $user->scores->avg('easy');
+        $scores['easy'] = $easy;
+
+        $speed = $user->scores->avg('speed');
+        $scores['speed'] = $speed;
+
+        $manner = $user->scores->avg('manner');
+        $scores['manner'] = $manner;
+
+        $understand = $user->scores->avg('understand');
+        $scores['understand'] = $understand;
+
 
 
         return view('users.profile', [
-            'user' => $user
-
+            'user' => $user,
+            'scores' => $scores,
+            // 'scores' => $user->scores
         ]); 
+
     }
 
 

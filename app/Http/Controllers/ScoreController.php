@@ -17,7 +17,6 @@ class ScoreController extends Controller
 
     public function create(User $user, AnswerRequest $answerrequest) 
     { 
-        // dd($user);
 
 
         return view('scores.create' ,[
