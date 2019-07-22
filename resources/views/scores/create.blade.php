@@ -15,7 +15,7 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <form action="{{ route('score.update', $answerrequest->user->id) }}" method="post">
+                            <form action="{{ route('scores.update', $user->id) }}" method="post">
                                 @csrf
                                 <h5 class="card-title">
                                     わかりやすさ：<input type="text" name="easy">
@@ -28,7 +28,6 @@
                                 </h5> 
                                 <h5 class="card-title">
                                     解決度：<input type="text" name="understand">  
-                                </h5>
                                 <button type="submit" class="btn btn-primary">送信</button> 
                             </form>
 

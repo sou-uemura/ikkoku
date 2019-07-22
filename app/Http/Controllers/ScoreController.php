@@ -5,20 +5,26 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Score;
 use App\User;
+use App\AnswerRequest;
+use APP\Http\ontrollers\UserController;
 use App\Http\Requests\ScoreRequest;
 use App\Http\Controllers\Auth;
-use App\Http\Controllers\Answerrequest;
+// use App\Http\Controllers\Answerrequest;
 
 
 class ScoreController extends Controller
 {
 
-    public function create(User $user) 
+    public function create(User $user, AnswerRequest $answerrequest) 
     { 
+        // dd($user);
+
 
         return view('scores.create' ,[
-            'answerrequest' => $answerrequest
+            'user' => $user
         ]);
+
+
 
     }
 
