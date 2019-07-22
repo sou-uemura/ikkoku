@@ -56,6 +56,9 @@
                                 <h5 class="card-title">
                                     解決度：{{ $scores['understand'] }}
                                 </h5>
+                                <h5 class="card-title">
+                                    合計：
+                                </h5>
                             </div>
                         </div>
                     </div>

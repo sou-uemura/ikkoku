@@ -61,7 +61,9 @@ class QuestionController extends Controller
      */
     public function show(Question $question)
     {
-        return view('questions.show', ['question' => $question]);    
+        return view('questions.show', [
+            'question' => $question
+            ]);    
     }
 
     /**
@@ -70,9 +72,12 @@ class QuestionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Question $question)
     {
-        //
+        return view('questions.edit', [
+            'question' => $question
+            ]); 
+
     }
 
     /**
@@ -82,9 +87,13 @@ class QuestionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Question $question)
     {
-        //
+        $question->title = $request->title;
+        $question->content = $request->content;
+        $question->save();
+
+        return redirect()->route('questions.show', $question->id);
     }
 
     /**

@@ -5,7 +5,13 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">質問詳細</div>
+                    <div class="card-header">質問詳細
+                            @if ( $question->user_id  ===  Auth::id() )
+                            <a href="{{ route('questions.edit', $question->id) }}" method="get">
+                                    <button type="submit" class="btn btn-primary">編集</button>      
+                            </a>
+                        @endif
+                    </div>
                         <div class="card-body">
                             @if (session('status'))
                                 <div class="alert alert-success" role="alert">
@@ -14,10 +20,10 @@
                             @endif
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ $question->title }}</h5>
-                                        <a href="{{ action('UserController@show', $question->user->id) }}">
-                                            投稿者:{{ $question->user->name }}
-                                        </a>
+                                    <a href="{{ action('UserController@show', $question->user->id) }}">
+                                        投稿者:{{ $question->user->name }}
+                                    </a>
+                                    <h5 class="card-title">{{ $question->title }}</h5>    
                                     <p class="card-text">{{ $question->content }}</p>
                                 </div>
                             </div>
