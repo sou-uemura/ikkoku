@@ -22,7 +22,7 @@
                                   投稿者:{{ $question->user->name }}
                                 </h5>
                                 <p class="card-text">{{ $question->content }}</p>
-                            <a href="{{ route('questions.show', $question->id)}}" class="btn btn-primary">詳細</a>
+                                <a href="{{ route('questions.show', $question->id)}}" class="btn btn-primary">詳細</a>
                             </div>
                         </div>
                     @endforeach

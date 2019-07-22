@@ -23,10 +23,10 @@ class CreateQuestionsTable extends Migration
             $table->unsignedInteger('user_id');
 
             $table->index(["user_id"], 'fk_use_idx');
-            $table->foreign('user_id', 'fk_use_idx')
-                ->references('id')->on('users')
-                ->onDelete('no action')
-                ->onUpdate('no action');
+            // $table->foreign('user_id', 'fk_use_idx')
+            //     ->references('id')->on('users')
+            //     ->onDelete('no action')
+            //     ->onUpdate('no action');
         });
     }
 

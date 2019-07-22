@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Question;
+use App\User;
 use App\Http\Requests\QuestionRequest;
-use  App\Http\Controllers\Auth;
+use Auth;
 
 
 class QuestionController extends Controller
@@ -102,8 +103,12 @@ class QuestionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Question $question)
     {
-        //
+        $userId = auth()->id();
+
+        $question->delete();
+
+        return redirect()->route('users.profile', $userId);
     }
 }

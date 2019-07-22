@@ -53,6 +53,11 @@
                                             </h5>
                                             <p class="card-text">{{ $question->content }}</p>
                                             <a href="{{ route('questions.show', $question->id)}}" class="btn btn-primary">詳細</a>
+                                            <form action="{{ route('questions.destroy', $question->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <input type="submit" value="削除" class="btn btn-danger btn-sm">
+                                            </form>
                                         </div>
                                     </div>
                                 @endforeach

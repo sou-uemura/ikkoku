@@ -26,15 +26,15 @@ class CreateAnswerRequestsTable extends Migration
 
             $table->index(["question_id"], 'fk_questions_idx');
 
-            $table->foreign('user_id')
-                ->references('id')->on('users')
-                ->onDelete('no action')
-                ->onUpdate('no action');
+            // $table->foreign('user_id')
+            //     ->references('id')->on('users')
+            //     ->onDelete('no action')
+            //     ->onUpdate('no action');
 
-            $table->foreign('question_id')
-                ->references('id')->on('questions')
-                ->onDelete('no action')
-                ->onUpdate('no action');
+            // $table->foreign('question_id')
+            //     ->references('id')->on('questions')
+            //     ->onDelete('no action')
+            //     ->onUpdate('no action');
         });
     }
 

@@ -29,6 +29,9 @@ Route::get('/questions/{question}', 'QuestionController@show')->name('questions.
 Route::post('/questions', 'QuestionController@store')->name('questions.store');
 Route::get('/questions/{question}/edit', 'QuestionController@edit')->name('questions.edit');
 Route::post('/questions/{question}/update', 'QuestionController@update')->name('questions.update');
+Route::delete('/questions/{question}/delete', 'QuestionController@destroy')->name('questions.destroy');
+
+
 
 
 Route::get('/user/{user}', 'UserController@show')->name('users.profile');
