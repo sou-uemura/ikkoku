@@ -22,6 +22,7 @@ class CreateScoresTable extends Migration
             $table->integer('speed');
             $table->integer('manner');
             $table->integer('understand');
+            $table->timestamps();
 
             $table->index(["user_id"], 'fk_users_idx');
 

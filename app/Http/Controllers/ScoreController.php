@@ -32,7 +32,7 @@ class ScoreController extends Controller
 
     public function update(Score $score, Request $request)
     {
-
+        $score->user_id = $request->user_id;
         $score->easy = $request->easy;
         $score->speed = $request->speed;
         $score->manner = $request->manner;
