@@ -9,9 +9,6 @@ use App\Http\Controllers\Auth;
 use App\Http\Controllers\User;
 use App\Http\Controllers\Question;
 
-
-
-
 class AnswerRequestController extends Controller
 {
      /**
@@ -33,11 +30,7 @@ class AnswerRequestController extends Controller
             // Todo ログインしてないとき
             // redire
         }
-
     }
-
-
-
 
     /**
      * Show the application dashboard.
@@ -46,7 +39,6 @@ class AnswerRequestController extends Controller
      */
     public function store(AnswerRequestRequest $request)
     {
-
         $answerrequest = new AnswerRequest;
         $answerrequest->content = $request->content;
         $answerrequest->user_id = $request->user_id;
@@ -56,7 +48,6 @@ class AnswerRequestController extends Controller
         return redirect('/questions');
     }
 
-
     /**
      * Remove the specified resource from storage.
      *
@@ -65,9 +56,8 @@ class AnswerRequestController extends Controller
      */
     public function destroy(AnswerRequest $answerrequest)
     {
-
         $answerrequest->delete();
 
-        return redirect()->route('answerrequest.index');
+        return redirect()->route('answerrequests.index');
     }
 }

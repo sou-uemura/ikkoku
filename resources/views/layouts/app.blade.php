@@ -49,6 +49,34 @@
                                 </li>
                             @endif
                         @else
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
+                                使い方
+                            </button>
+                                
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalScrollableTitle">使用の流れ</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        {{-- Todo  後々やる--}}
+                                         1,twitterのDMで開始時間を決める<br>
+                                        2,zoomで会議室を作ってurlを送る（詳しくは<a href="https://zoom-japan.net/manual/host/schedule-zoom-meeting/">こちら</a>）<br>
+                                        3,チャット開始<br>
+                                        4,相手を評価して終了<br>
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -57,8 +85,8 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         <a href="{{ route('questions.create') }}" class="dropdown-item">質問投稿</a>
                                         <a href="{{ route('questions.index') }}" class="dropdown-item">質問一覧</a>
-                                        <a href="{{ route('users.profile' ,Auth::user()->id)}}" class="dropdown-item">プロフィール</a>
-                                        <a href="{{ route('answerrequest.index') }}" class="dropdown-item">リクエスト確認</a>
+                                        <a href="{{ route('users.profile' ,Auth::user()) }}" class="dropdown-item">プロフィール</a>
+                                        <a href="{{ route('answerrequests.index') }}" class="dropdown-item">リクエスト確認</a>
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

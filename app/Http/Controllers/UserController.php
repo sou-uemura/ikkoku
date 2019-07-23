@@ -19,7 +19,6 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(User $user, Score $score) 
-
     {
         $scores = [];
 
@@ -35,17 +34,12 @@ class UserController extends Controller
         $understand = $user->scores->avg('understand');
         $scores['understand'] = $understand;
 
-
-
         return view('users.profile', [
             'user' => $user,
             'scores' => $scores,
             // 'scores' => $user->scores
         ]); 
-
     }
-
-
 
     /**
      * Display the specified resource.
@@ -54,12 +48,10 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(User $user)
-
     {
         return view('users.edit', [
             'user' => $user
-        ]);  
-        
+        ]);     
     }
 
     /**
@@ -69,9 +61,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(User $user, Request $request)
-
     {
-
         $user->name = $request->name;
         $user->twitter_id = $request->twitter_id;
         $user->email = $request->email;
@@ -79,8 +69,6 @@ class UserController extends Controller
         $user->comment = $request->comment;
         $user->save();
 
-        return redirect()->route('users.profile', $user->id);
-        
+        return redirect()->route('users.profile', $user->id); 
     }
-
 }

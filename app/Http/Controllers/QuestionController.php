@@ -62,9 +62,7 @@ class QuestionController extends Controller
      */
     public function show(Question $question)
     {
-        return view('questions.show', [
-            'question' => $question
-            ]);    
+        return view('questions.show', ['question' => $question]);    
     }
 
     /**
@@ -75,10 +73,7 @@ class QuestionController extends Controller
      */
     public function edit(Question $question)
     {
-        return view('questions.edit', [
-            'question' => $question
-            ]); 
-
+        return view('questions.edit', ['question' => $question]); 
     }
 
     /**

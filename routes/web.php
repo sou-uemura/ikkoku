@@ -40,9 +40,9 @@ Route::get('/user/{user}/edit', 'UserController@edit')->name('users.edit');
 Route::post('user/{user}/update', 'UserController@update')->name('users.update');
 
 
-Route::get('/answerrequest', 'AnswerRequestController@index')->name('answerrequest.index');
-Route::post('/answerrequest', 'AnswerRequestController@store')->name('answerrequest.store');
-Route::delete('/answerrequest/{answerrequest}', 'AnswerRequestController@destroy')->name('answerrequest.destroy');
+Route::get('/answerrequests', 'AnswerRequestController@index')->name('answerrequests.index');
+Route::post('/answerrequests', 'AnswerRequestController@store')->name('answerrequests.store');
+Route::delete('/answerrequests/{answerrequest}', 'AnswerRequestController@destroy')->name('answerrequests.destroy');
 
 
 Route::get('/score/{user}/create', 'ScoreController@create')->name('scores.create');
