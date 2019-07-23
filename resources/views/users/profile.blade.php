@@ -22,6 +22,9 @@
                     @endif
                         <div class="card">
                             <div class="card-body">
+                                @if($user->icon)
+                                    <img src="{{ asset("storage/icon/$user->id.jpg") }}">
+                                @endif
                                 <h5 class="card-title">
                                   名前：{{ $user->name }}
                                 </h5>

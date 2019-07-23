@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
             $table->integer('age')->nullable()->default(null);
             $table->char('sex')->nullable()->default(null);
             $table->string('comment', 255)->nullable()->default(null);
-            $table->binary('icon')->nullable()->default(null);
+            $table->string('icon')->nullable()->default(null);
             $table->string('twitter_id')->nullable()->default(null);
             $table->string('avatar')->nullable()->default(null);
             $table->timestamps();

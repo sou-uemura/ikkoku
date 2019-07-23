@@ -7,7 +7,7 @@ use App\User;
 use App\Question;
 use App\Score;
 use App\Http\Requests\UserRequest;
-use  App\Http\Controllers\Auth;
+use Auth;
 
 
 class UserController extends Controller
@@ -55,13 +55,16 @@ class UserController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified resourcnamee.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(User $user, Request $request)
     {
+        // dd($request->icon);
+        $user->icon = $request->icon->storeAs('public/icon', Auth::user()->id.'.jpg');
+        // $user->icon = $request->icon->store('public/icon');
         $user->name = $request->name;
         $user->twitter_id = $request->twitter_id;
         $user->email = $request->email;

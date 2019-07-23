@@ -15,8 +15,15 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <form action="{{ route('users.update', $user->id) }}" method="post">
+                            <form action="{{ route('users.update', $user->id) }}" enctype="multipart/form-data" method="post">
                                 @csrf
+                                <h5 class="card-title">
+                                    @if($user->icon)
+                                        <img src="{{ asset("storage/icon/$user->id.jpg") }}">
+                                    @endif
+                                    <br>
+                                    アイコン：<input type="file" name="icon">
+                                </h5>
                                 <h5 class="card-title">
                                     名前：<input type="text" name="name" value="{{ $user->name }}">
                                 </h5>

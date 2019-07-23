@@ -68,7 +68,7 @@
                                         {{-- Todo  後々やる--}}
                                          1,twitterのDMで開始時間を決める<br>
                                         2,zoomで会議室を作ってurlを送る（詳しくは<a href="https://zoom-japan.net/manual/host/schedule-zoom-meeting/">こちら</a>）<br>
-                                        3,チャット開始<br>
+                                        3,チャット開始(可能であれば録画をお願いします。)<br>
                                         4,相手を評価して終了<br>
                                     </div>
                                     <div class="modal-footer">
