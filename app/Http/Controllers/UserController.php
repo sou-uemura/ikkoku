@@ -8,6 +8,7 @@ use App\Question;
 use App\Score;
 use App\Http\Requests\UserRequest;
 use Auth;
+use \Khill\Lavacharts\Lavacharts as Lava;
 
 
 class UserController extends Controller
