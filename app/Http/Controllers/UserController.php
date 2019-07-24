@@ -34,10 +34,15 @@ class UserController extends Controller
         $understand = $user->scores->avg('understand');
         $scores['understand'] = $understand;
 
+        $sum = 0;
+        foreach($scores as $score) {
+            $sum += $score;
+        }
+
         return view('users.profile', [
             'user' => $user,
             'scores' => $scores,
-            // 'scores' => $user->scores
+            'sum' => $sum
         ]); 
     }
 
@@ -63,7 +68,9 @@ class UserController extends Controller
     public function update(User $user, Request $request)
     {
         // dd($request->icon);
-        $user->icon = $request->icon->storeAs('public/icon', Auth::user()->id.'.jpg');
+        if($request->icon){
+            $user->icon = $request->icon->storeAs('public/icon', Auth::user()->id.'.jpg');
+        }
         // $user->icon = $request->icon->store('public/icon');
         $user->name = $request->name;
         $user->twitter_id = $request->twitter_id;
