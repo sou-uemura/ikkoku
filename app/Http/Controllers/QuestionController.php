@@ -8,7 +8,6 @@ use App\User;
 use App\Http\Requests\QuestionRequest;
 use Auth;
 
-
 class QuestionController extends Controller
 {
     /**
@@ -18,7 +17,9 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        $questions = Question::all();
+        $questions = Question::orderBy('created_at','desc')->get();
+       
+
         $questions->load('user');
         
         return view('questions.index',[

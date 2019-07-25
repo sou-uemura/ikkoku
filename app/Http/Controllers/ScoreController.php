@@ -6,27 +6,17 @@ use Illuminate\Http\Request;
 use App\Score;
 use App\User;
 use App\AnswerRequest;
-use APP\Http\ontrollers\UserController;
 use App\Http\Requests\ScoreRequest;
-use App\Http\Controllers\Auth;
-use Illuminate\Support\Facades\Route;
 
 class ScoreController extends Controller
 {
 
     public function create(User $user, AnswerRequest $answerrequest) 
     { 
-
-
         return view('scores.create' ,[
             'user' => $user
         ]);
-
-
-
     }
-
-
 
     public function store(Request $request)
     {

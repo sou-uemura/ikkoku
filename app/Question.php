@@ -20,7 +20,7 @@ class Question extends Model
         'title', 'content', 'user_id',
     ];
 
-    public $timestamps = false;
+    public $timestamps = true;
 
     public function user() {
         return $this->belongsTo(\App\User::class,'user_id');
