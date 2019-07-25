@@ -16,11 +16,14 @@
 
                     @foreach($questions as $question) 
                         @foreach($question->answerRequests as $answerrequest)
-                        {{-- @dd($answerrequest) --}}
                             @if($answerrequest)
                             <div class="card">
                                 <h5 class="card-title">
                                     <a href="{{ route('users.profile', $answerrequest->user->id) }}">
+                                    回答者：<br>
+                                    @if($answerrequest->user->icon)
+                                        <img src="{{ asset("storage/icon/$question->user_id.jpg") }}">
+                                    @endif
                                     {{ $answerrequest->user->name }}
                                     </a>
                                 </h5>

@@ -51,6 +51,9 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <h5 class="card-title">{{ $question->title }}</h5>
+                                            @if($question->user->icon)
+                                                <img src="{{ asset("storage/icon/$question->user_id.jpg") }}">
+                                            @endif
                                             <h5 class="card-title">
                                             投稿者:{{ $question->user->name }}
                                             </h5>
@@ -71,24 +74,25 @@
 
 
             <div class="card">
-                <div class="card-header">評価</div>
+                <div class="card-header">評価平均</div>
                 <div class="card-body">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">
-                                わかりやすさ： {{ $scores['easy'] }}
+                                わかりやすさ： {{ $scores['easy'] }} / 10
                             </h5>
                             <h5 class="card-title">
-                                スピード： {{ $scores['speed'] }}
+                                スピード： {{ $scores['speed'] }} / 10
                             </h5>
                             <h5 class="card-title">
-                                マナー：{{ $scores['manner'] }}
+                                マナー：{{ $scores['manner'] }} / 10
                             </h5>
                             <h5 class="card-title">
-                                解決度：{{ $scores['understand'] }}
+                                解決度：{{ $scores['understand'] }} / 10
                             </h5>
+                            <br>
                             <h5 class="card-title">
-                                合計：
+                                合計： {{ $sum }} / 40
                             </h5>
                         </div>
                         <div>

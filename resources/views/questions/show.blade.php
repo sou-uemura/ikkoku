@@ -20,6 +20,9 @@
                         @endif
                         <div class="card">
                             <div class="card-body">
+                                @if($question->user->icon)
+                                    <img src="{{ asset("storage/icon/$question->user_id.jpg") }}">
+                                @endif
                                 <a href="{{ route('users.profile', $question->user->id) }}">
                                     投稿者:{{ $question->user->name }}
                                 </a>

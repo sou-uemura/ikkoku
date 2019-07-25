@@ -18,6 +18,9 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $question->title }}</h5>
+                                @if($question->user->icon)
+                                    <img src="{{ asset("storage/icon/$question->user_id.jpg") }}">
+                                @endif
                                 <h5 class="card-title">
                                   投稿者:{{ $question->user->name }}
                                 </h5>

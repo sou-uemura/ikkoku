@@ -24,7 +24,7 @@ class ScoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_id' => 'required'
+            'user_id' => 'required',
             'easy' => 'required',
             'speed' => 'required',
             'manner' => 'required',
