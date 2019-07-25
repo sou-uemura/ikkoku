@@ -46,6 +46,6 @@ Route::delete('/answerrequests/{answerrequest}', 'AnswerRequestController@destro
 
 
 Route::get('/score/{user}/create', 'ScoreController@create')->name('scores.create');
-Route::post('score/{user}/update', 'ScoreController@update')->name('scores.update');
+Route::post('score/{user}/store', 'ScoreController@store')->name('scores.store');
 
 

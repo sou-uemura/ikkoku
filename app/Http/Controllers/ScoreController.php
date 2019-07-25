@@ -9,8 +9,7 @@ use App\AnswerRequest;
 use APP\Http\ontrollers\UserController;
 use App\Http\Requests\ScoreRequest;
 use App\Http\Controllers\Auth;
-// use App\Http\Controllers\Answerrequest;
-
+use Illuminate\Support\Facades\Route;
 
 class ScoreController extends Controller
 {
@@ -29,14 +28,21 @@ class ScoreController extends Controller
 
 
 
-    public function update(Score $score, Request $request)
+    public function store(Request $request)
     {
+        $score = new score();
+
         $score->user_id = $request->user_id;
         $score->easy = $request->easy;
         $score->speed = $request->speed;
         $score->manner = $request->manner;
         $score->understand = $request->understand;
         $score->save();
+
+        if($score->save()) {
+            $answerrequest = AnswerRequest::find($request->answer_request_id);
+            $answerrequest->delete();
+        }
 
         return redirect()->route('questions.index');
     }

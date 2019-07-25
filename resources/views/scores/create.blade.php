@@ -15,9 +15,10 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <form action="{{ route('scores.update', $user->id) }}" method="post">
+                            <form action="{{ route('scores.store', $user->id) }}" method="post">
                                 @csrf
                                 <input type="hidden" name="user_id" value="{{ $user->id }}">
+                                <input type="hidden" name="answer_request_id" value="{{ app('request')->answer_request_id }}">
                                 <h5 class="card-title">
                                     わかりやすさ：<input type="number" name="easy" min="0" max="10" value="0">
                                 </h5>

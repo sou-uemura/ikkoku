@@ -32,7 +32,7 @@
                                 </h5>
 
                                 <a href="https://twitter.com/{{ $answerrequest->user->twitter_id }}">twitterへ</a>
-                                <a href="{{ route('scores.create', $answerrequest->user_id) }}">評価</a>
+                                <a href="{{ route('scores.create', ['user' => $answerrequest->user_id, 'answer_request_id' => $answerrequest->id]) }}">評価</a>
                                 <form action="{{ route('answerrequests.destroy', $answerrequest->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
