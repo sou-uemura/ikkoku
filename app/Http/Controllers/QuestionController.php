@@ -17,7 +17,7 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        $questions = Question::orderBy('created_at','desc')->get();
+        $questions = Question::orderBy('created_at','desc')->paginate(4);
        
 
         $questions->load('user');

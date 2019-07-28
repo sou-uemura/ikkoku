@@ -68,11 +68,9 @@ class UserController extends Controller
      */
     public function update(User $user, Request $request)
     {
-        // dd($request->icon);
         if($request->icon){
             $user->icon = $request->icon->storeAs('public/icon', Auth::user()->id.'.jpg');
         }
-        // $user->icon = $request->icon->store('public/icon');
         $user->name = $request->name;
         $user->twitter_id = $request->twitter_id;
         $user->email = $request->email;

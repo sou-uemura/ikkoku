@@ -4,8 +4,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">profile編集 </div>
+            {{-- <div class="card"> --}}
+                <div class="card-header text-center bg-white font-weight-bold">プロフィール編集 </div>
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -19,35 +19,35 @@
                                 @csrf
                                 <h5 class="card-title">
                                     @if($user->icon)
-                                        <img src="{{ asset("storage/icon/$user->id.jpg") }}">
+                                            <img class="d-block mx-auto" src="{{ asset("storage/icon/$user->id.jpg") }}">
                                     @endif
                                     <br>
-                                    アイコン：<input type="file" name="icon">
+                                    アイコン<br><input type="file" name="icon">
                                 </h5>
                                 <h5 class="card-title">
-                                    名前：<input type="text" name="name" value="{{ $user->name }}">
+                                    名前<br><input class="border" type="text" name="name" value="{{ $user->name }}">
                                 </h5>
                                 <h5 class="card-title">
-                                    twitterID：@<input type="text" name="twitter_id" value="{{ $user->twitter_id }}">  
+                                    twitterID(＠以降)<br><input  class="border" type="text" name="twitter_id" value="{{ $user->twitter_id }}">  
                                 </h5>
                                 <h5 class="card-title">
-                                    年齢：<input type="text" name="age" value="{{ $user->age }}">  
+                                    年齢<br><input class="border" type="text" name="age" value="{{ $user->age }}">  
                                 </h5> 
                                 <h5 class="card-title">
-                                    メールアドレス：<input type="text" name="email" value="{{ $user->email }}">  
+                                    メールアドレス：<input class="border" type="text" name="email" value="{{ $user->email }}">  
                                 </h5>
                                 <h5 class="card-title">
-                                    一言：<br><textarea name="comment">{{ $user->comment }}</textarea> 
+                                    一言：<br><textarea class="border" name="comment">{{ $user->comment }}</textarea> 
                                 </h5>
-                                
-                               
-                                <button type="submit" class="btn btn-primary">確定</button> 
+                                <div class="text-center">
+                                    <button type="submit" class="button_h6 bg-white">確定</button> 
+                                </div>
                             </form>
 
                         </div>
                     </div>
                 </div>
-            </div>
+            {{-- </div> --}}
         </div>
     </div>
 </div>

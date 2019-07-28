@@ -24,7 +24,11 @@ Auth::routes();
 
 
 Route::get('/questions', 'QuestionController@index')->name('questions.index');
-Route::get('/questions/create', 'QuestionController@create')->name('questions.create');
+
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/questions/create', 'QuestionController@create')->name('questions.create');
+
+});
 Route::get('/questions/{question}', 'QuestionController@show')->name('questions.show');
 Route::post('/questions', 'QuestionController@store')->name('questions.store');
 Route::get('/questions/{question}/edit', 'QuestionController@edit')->name('questions.edit');
@@ -41,7 +45,9 @@ Route::post('user/{user}/update', 'UserController@update')->name('users.update')
 
 
 Route::get('/answerrequests', 'AnswerRequestController@index')->name('answerrequests.index');
-Route::post('/answerrequests', 'AnswerRequestController@store')->name('answerrequests.store');
+Route::group(['middleware' => 'auth'], function() {
+    Route::post('/answerrequests', 'AnswerRequestController@store')->name('answerrequests.store');
+});
 Route::delete('/answerrequests/{answerrequest}', 'AnswerRequestController@destroy')->name('answerrequests.destroy');
 
 

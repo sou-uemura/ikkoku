@@ -6,3 +6,139 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+img {
+    width: 50px;
+    height: auto;
+    border:solid 1px rgba(0,0,0,0.1);
+    margin-right:15px;
+    border-radius: 50%;
+}
+
+.main {
+    background-color:#ebebebfb;
+}
+
+.title {
+    border-bottom:solid 1px #bbbbbb;
+}
+
+.my-question {
+    border-bottom:1px solid rgba(0,0,0,0.125);
+}
+
+.profile {
+    border:1px solid rgba(0,0,0,0.125);
+    border-radius: 0.25rem;
+}
+
+.button_h6{
+    text-decoration: none;
+    color: #545454;
+    display: inline-block;
+    padding: 5px 15px;
+    border: 1px solid #545454;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+
+  .edit-button {
+      margin-top: 20px;
+  }
+  
+  .button_h6:after {
+    position: absolute;
+    transition: 0.4s;
+    content: "";
+    height: 2px;
+    background: #545454;
+  }
+
+  .button_h6:hover {
+    text-decoration: none;
+    color: #545454;
+    border-radius: 30px;
+  }
+
+.buttons {
+    display:inline-block;
+}
+
+textarea,
+input {
+    width:100%
+}
+
+.card-header {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+}
+
+img {
+    width: 50px;
+    height: auto;
+    border: solid 1px rgba(0, 0, 0, 0.3);
+    margin-right: 15px;
+    border-radius: 50%;
+}
+
+.title-border {
+    border-bottom: solid 1px #000;
+    letter-spacing: 5px;
+    font: size 20;
+    font-weight: bold;
+}
+
+
+.sample-text1 {
+    font-size: 30px;
+    font-weight: bold;
+    animation-name: fadein;
+    animation-duration: 2s;
+}
+@keyframes fadein {
+from {
+    opacity: 0;
+    transform: translateY(20px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+.sample-text2 {
+    font-size: 20px;
+    font-weight: bold;
+    animation-name: fadein;
+    animation-duration: 2s;
+}
+@keyframes fadein {
+from {
+    opacity: 0;
+    transform: translateY(20px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+//   .header {
+//     position:fixed;
+//     top:0;
+//     left:0;
+//     z-index:24;
+//     width:100%;
+//   }
+
+//   .header-padding {
+//       padding-top:35px;
+//       padding-bottom:35px;
+//   }
