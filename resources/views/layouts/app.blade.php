@@ -29,7 +29,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm header">
             <div class="container">
                 <nav class="navbar navbar-light">
-                        <a class="navbar-brand mx-auto font-weight-bold font-italic" href="#!">ikkoku</a>
+                        <a class="navbar-brand mx-auto font-weight-bold font-italic" href="{{ route('questions.index') }}">ikkoku</a>
                 </nav>
                 {{-- <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
