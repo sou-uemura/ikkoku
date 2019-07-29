@@ -20,8 +20,6 @@
                                 <h5 class="card-title">
                                     @if($user->icon)
                                         <img class="d-block mx-auto" src="{{ asset("storage/icon/$user->id.jpg") }}">
-                                    @else 
-                                        <img class="d-block mx-auto" src="{{ asset("images/null-icon.jpg") }}">
                                     @endif
                                     <br>
                                     アイコン<br><input type="file" name="icon">
