@@ -33,7 +33,7 @@
                                     {{ $answerrequest->content }}
                                 </h5>
                                 <div style="display:inline-block; width:32%;" class="text-center mt-2">
-                                    <a href="https://twitter.com/{{ $answerrequest->user->twitter_id }}"> <button type="submit" class="button_h6 twitter-button text-white">twitter</button></a>
+                                    <a href="https://twitter.com/{{ $answerrequest->user->twitter_id }}" target="_blank"> <button type="submit" class="button_h6 twitter-button text-white">twitter</button></a>
                                 </div>
                                 <div style="display:inline-block; width:33%;" class="text-center mt-2">
                                     <a href="{{ route('scores.create', ['user' => $answerrequest->user_id, 'answer_request_id' => $answerrequest->id]) }}"> <button type="submit" class="button_h6 bg-white">評価</button></a>
