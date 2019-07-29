@@ -14,7 +14,7 @@
             html, body {
                 background-color: #fff;
                 color: #636b6f;
-                font-family: 'Nunito', sans-serif;
+                font-family: 'Nunito', "Helvetica Neue", Helvetica, Arial, "游ゴシック体", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;

@@ -128,8 +128,20 @@
 </body>
 <!-- Footer -->
 <footer class="page-footer font-small cyan darken-3">
+    <nav>
+        <div class="footer-links">
+	        <ul>
+		        <li>
+                    <a href="お問い合わせページのURL">・お問い合わせ</a>
+                </li>
+		        <li>
+                    <a href="プライバシーポリシーのURL">・プライバシーポリシー</a>
+                 </li>
+            </ul>
+        </div>
+    </nav>
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    <div class="footer-copyright text-center">© 2019 Copyright:
         <a href="#"> ikkoku.com</a>
     </div>
     <!-- Copyright -->

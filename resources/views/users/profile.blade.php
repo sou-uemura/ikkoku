@@ -5,13 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card-header bg-white text-center font-weight-bold">プロフィール</div>
-            @if ( $user->id  ===  Auth::id() )
-                <div class="text-center edit-button">
-                    <a href="{{ route('users.edit', $user->id) }}" method="GET">
-                        <button type="submit" class="button_h6 bg-white">編集</button>      
-                    </a>                           
-                </div>
-            @endif
+            
             {{-- <div class="card mb-4"> --}}
                 
                 {{-- <div class="card-body"> --}}
@@ -27,6 +21,8 @@
                     <h5 class="card-text">
                     @if($user->icon)
                         <img class="d-block mx-auto" src="{{ asset("storage/icon/$user->id.jpg") }}">
+                    @else 
+                        <img class="d-block mx-auto" src="{{ asset("images/null-icon.jpg") }}">
                     @endif 
                         <br>名前：{{ $user->name }}
                     </h5>
@@ -43,41 +39,54 @@
                     </h5>
                 </div>
             </div>
+            @if ( $user->id  ===  Auth::id() )
+                <div class="text-center">
+                    <a href="{{ route('users.edit', $user->id) }}" method="GET">
+                        <button type="submit" class="button_h6 bg-white">編集</button>      
+                    </a>                           
+                </div>
+            @endif
+
+
                     {{-- </div> --}}
                 {{-- </div> --}}
             {{-- </div> --}}
 
             {{-- <div class="card"> --}}
-            <div class="card-header text-center bg-white font-weight-bold mb-2 mt-2">投稿中の質問</div>
+            <div class="card-header text-center bg-white font-weight-bold mb-2 mt-4">投稿中の質問</div>
                 {{-- <div class="card-body"> --}}
                     {{-- <div class="card"> --}}
                         {{-- <div class="card-body"> --}}
             @foreach($user->questions as $question)
                 {{-- <div class="card"> --}}
-                <div class="card-body">
-                    <div class="card-body profile bg-white">
+                <div class="card-body ">
+                    <div class="card-body profile bg-white clearfix">
                         <h5 class="card-title title pb-2">{{ $question->title }}</h5>
                         {{-- @if($question->user->icon)
                             <img class="mb-3" src="{{ asset("storage/icon/$question->user_id.jpg") }}">
-                        @endif
+                        @endif 
                         <h5 class="card-title">
                         投稿者:{{ $question->user->name }}
                         </h5> --}}
                         <p class="card-text">{{ $question->content }}</p>
-                        <div class="text-right">
-                            <div style="display:inline-block;">
-                                <a href="{{ route('questions.show', $question->id)}}" class="button_h6 bg-white">詳細</a>
+
+
+                        
+                        @if( $user->id  ===  Auth::id() )
+                            <div style="float:right;">
+                                <form action="{{ route('questions.destroy', $question->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" onclick="return confirm('削除してもよろしいですか？')" class="button_h6 ml-3 delete-button text-white">削除</button>
+                                </form>
                             </div>
-                            @if( $user->id  ===  Auth::id() )
-                                <div style="display:inline-block;">
-                                    <form action="{{ route('questions.destroy', $question->id) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" onclick="return confirm('削除してもよろしいですか？')" class="button_h6 bg-white">削除</button>
-                                    </form>
-                                </div>
-                            @endif
+                        @endif
+                        <div style="float:right;">
+                            <a href="{{ route('questions.show', $question->id)}}" class="button_h6 bg-white">詳細</a>
                         </div>
+                    
+
+
                     </div>
                 </div>
                 {{-- </div> --}}

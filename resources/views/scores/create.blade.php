@@ -14,7 +14,7 @@
                     @endif
                     <div class="card">
                         <div class="card-body">
-
+                            
                             <form action="{{ route('scores.store', $user->id) }}" method="post">
                                 @csrf
                                 <input type="hidden" name="user_id" value="{{ $user->id }}">
@@ -29,7 +29,7 @@
                                 <h5 class="card-title">
                                     マナー<input class="border mt-2 mb-2" type="number" name="manner" min="0" max="10" value="5">  
                                 </h5> 
-                                <h5 class="card-title">
+                                <h5 class="card-title mb-4">
                                     解決度<input class="border mt-2 mb-2" type="number" name="understand" min="0" max="10" value="5">  
                                 </h5>
                                 <div class="text-center mt-3 mb-2">

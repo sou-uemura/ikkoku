@@ -6,31 +6,32 @@
         <div class="col-md-8">
                 {{-- <div class="card"> --}}
                     <div class="card-header bg-white text-center font-weight-bold">質問詳細</div>
-                        @if ( $question->user_id  ===  Auth::id() )
-                            <div class="text-right edit-button">
-                                <a href="{{ route('questions.edit', $question->id) }}">
-                                    <button type="submit" class="button_h6 bg-white">編集</button>      
-                                </a>
-                            </div>
-                        @endif
-                   
                     <div class="card-body">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
                             </div>
                         @endif
-                      
-                            <div class="card-body bg-white border">
-                                @if($question->user->icon)
-                                    <img class="rounded-circle mb-3" src="{{ asset("storage/icon/$question->user_id.jpg") }}">
-                                @endif
-                                 投稿者:<a href="{{ route('users.profile', $question->user->id) }}">{{ $question->user->name }}</a>
-                                <h5 class="card-title border-bottom">{{ $question->title }}</h5>    
-                                <p class="card-text">{{ $question->content }}</p>
-                            </div>
-
+                    
+                        <div class="card-body bg-white border">
+                            @if($question->user->icon)
+                                <img class="rounded-circle mb-3" src="{{ asset("storage/icon/$question->user_id.jpg") }}">
+                            @else 
+                                <img class="rounded-circle mb-3" src="{{ asset("images/null-icon.jpg") }}" >
+                            @endif
+                            投稿者:<a href="{{ route('users.profile', $question->user->id) }}">{{ $question->user->name }}</a>
+                            <h5 class="card-title border-bottom">{{ $question->title }}</h5>    
+                            <p class="card-text">{{ $question->content }}</p>
+                        </div>
                     </div>
+
+                    @if ( $question->user_id  ===  Auth::id() )
+                        <div class="text-center">
+                            <a href="{{ route('questions.edit', $question->id) }}">
+                                <button type="submit" class="button_h6 bg-white">編集</button>      
+                            </a>
+                        </div>
+                    @endif
                 {{-- </div> --}}
 
                 @if ( $question->user_id != Auth::id() )

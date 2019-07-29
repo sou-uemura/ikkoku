@@ -19,7 +19,9 @@
                             <div class="card-body"> 
                                 <h5 class="card-title">
                                     @if($question->user->icon)
-                                    <img class="rounded-circle" src="{{ asset("storage/icon/$question->user_id.jpg") }}" width="50px" heigth="auto">
+                                        <img class="rounded-circle" src="{{ asset("storage/icon/$question->user_id.jpg") }}" width="50px" heigth="auto">
+                                    @else 
+                                        <img class="rounded-circle" src="{{ asset("images/null-icon.jpg") }}" width="50px" heigth="auto">
                                     @endif
                                     {{ $question->user->name }}
                                 </h5>

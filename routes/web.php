@@ -27,7 +27,6 @@ Route::get('/questions', 'QuestionController@index')->name('questions.index');
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/questions/create', 'QuestionController@create')->name('questions.create');
-
 });
 Route::get('/questions/{question}', 'QuestionController@show')->name('questions.show');
 Route::post('/questions', 'QuestionController@store')->name('questions.store');
@@ -40,7 +39,6 @@ Route::delete('/questions/{question}', 'QuestionController@destroy')->name('ques
 
 Route::get('/user/{user}', 'UserController@show')->name('users.profile');
 Route::get('/user/{user}/edit', 'UserController@edit')->name('users.edit');
-
 Route::post('user/{user}/update', 'UserController@update')->name('users.update');
 
 
@@ -50,8 +48,9 @@ Route::group(['middleware' => 'auth'], function() {
 });
 Route::delete('/answerrequests/{answerrequest}', 'AnswerRequestController@destroy')->name('answerrequests.destroy');
 
-
+Route::group(['middleware' => 'auth'], function() {
 Route::get('/score/{user}/create', 'ScoreController@create')->name('scores.create');
+});
 Route::post('score/{user}/store', 'ScoreController@store')->name('scores.store');
 
 

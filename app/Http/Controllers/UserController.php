@@ -55,10 +55,16 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('users.edit', [
+        if($user->id === Auth::id()){
+              return view('users.edit', [
             'user' => $user
         ]);     
+        } else {
+            return redirect()->route('users.profile', $user->id); 
+        }
     }
+
+    
 
     /**
      * Display the specified resourcnamee.
