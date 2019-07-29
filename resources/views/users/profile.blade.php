@@ -27,7 +27,7 @@
                         <br>名前：{{ $user->name }}
                     </h5>
                     <h5 class="card-text">
-                    twitter：<a href="https://twitter.com/{{ $user->twitter_id }}">
+                    twitter：<a href="https://twitter.com/{{ $user->twitter_id }}" target="_blank">
                         ＠{{ $user->twitter_id }}</a>   
                     </h5>
                     <h5 class="card-text">
