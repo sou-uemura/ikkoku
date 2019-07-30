@@ -20,14 +20,16 @@
 
                    
                     
+                    
 
                     @foreach($questions as $question)
-
-                        @if (filled($questions) && !filled($question->answerrequest))
-                            <div class="text-center mt-5 mb-5 title-border">現在リクエストはありません。</div>
-                        @endif
-
+                        
                         @foreach($question->answerRequests as $answerrequest)
+                        
+                            @if (!$answerrequest))
+                                <div class="text-center mt-5 mb-5 title-border">現在リクエストはありません。</div>
+                            @endif
+
                             @if($answerrequest)
                                 <div class="card-body bg-white border mb-3">
                                     <h5 class="card-title">
