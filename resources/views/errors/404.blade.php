@@ -9,5 +9,5 @@
 {{-- サーバーは要求されたリソースを見つけることができなかったことを示します。 URLのタイプミス、もしくはページが移動または削除された可能性があります。 トップページに戻るか、もう一度検索してください。 --}}
 
 @section('link')
-  <p><a href="{{env('APP_URL')}}">to TOP&gt;&gt;</a></p>
+  <p><a href="{{ route('questions.index') }}">to TOP&gt;&gt;</a></p>
 @endsection

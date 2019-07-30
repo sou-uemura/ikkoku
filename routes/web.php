@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('error/{code}', function ($code) {
+    abort($code);
+  });
 
 
 Route::get('auth/twitter', 'Auth\SocialAuthController@redirectToProvider');

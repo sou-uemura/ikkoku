@@ -17,13 +17,32 @@
 
                             <form action="{{ route('users.update', $user->id) }}" enctype="multipart/form-data" method="post">
                                 @csrf
-                                <h5 class="card-title">
+                                <h5 class="card-title border-bottom">
                                     @if($user->icon)
                                         <img class="d-block mx-auto" src="{{ asset("storage/icon/$user->id.jpg") }}">
                                     @endif
                                     <br>
-                                    アイコン<br><input type="file" name="icon">
+                                    アイコン<br>
                                 </h5>
+                                {{-- こっちボタンは使いたい --}}
+                                <div class="input-group">
+                                    <label class="">
+                                        <span class="button_h6 bg-white">
+                                            ファイル選択<input type="file" name="icon" style="display:none">
+                                        </span>
+                                    </label>
+                                    <input type="text" class="form-control" id="icon" readonly="">
+                                </div>
+                                {{-- こっちは動いてる --}}
+                                {{-- <div class="input-group">
+                                    <label class="input-group-btn">
+                                        <span class="btn btn-primary">
+                                            Choose File<input type="file" style="display:none">
+                                        </span>
+                                    </label>
+                                    <input type="text" class="form-control" id="unchi" readonly="">
+                                </div> --}}
+                                
                                 <h5 class="card-title border-bottom mt-2">
                                     名前<br>
                                 </h5><input class="border" type="text" name="name" value="{{ $user->name }}">
@@ -51,4 +70,16 @@
         </div>
     </div>
 </div>
+<script>
+// 画面上のなんかが変わったら、なんかする、の例
+// changeは、イベント
+$(document).on('change', ':file', function() {
+    var input = $(this),
+    numFiles = input.get(0).files ? input.get(0).files.length : 1,
+    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+    
+    // jqueryで画面上の要素を取ってきて書き換える例
+    $('#icon').val(label);
+});
+</script>
 @endsection
