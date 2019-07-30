@@ -36,9 +36,9 @@
                                         <a href="{{ route('users.profile', $answerrequest->user->id) }}">
                                         
                                         @if($answerrequest->user->icon)
-                                            <img src="{{ asset("storage/icon/$answerrequest->user_id.jpg") }}">
+                                            <img src="{{ $answerrequest->user->icon }}">
                                         @else 
-                                            <img src="{{ asset("images/null-icon.jpg") }}">
+                                            <img src="http://res.cloudinary.com/ikkoku/image/upload/c_fit,h_256,w_256/null_icon.jpg">
                                         @endif
                                         {{ $answerrequest->user->name }}
                                         </a>

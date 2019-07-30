@@ -19,7 +19,9 @@
                                 @csrf
                                 <h5 class="card-title border-bottom">
                                     @if($user->icon)
-                                        <img class="d-block mx-auto" src="{{ asset("storage/icon/$user->id.jpg") }}">
+                                        <img class="d-block mx-auto" src="{{ $user->icon }}">
+                                    @else
+                                        <img class="d-block mx-auto" src="http://res.cloudinary.com/ikkoku/image/upload/c_fit,h_256,w_256/null_icon.jpg">
                                     @endif
                                     <br>
                                     アイコン<br>

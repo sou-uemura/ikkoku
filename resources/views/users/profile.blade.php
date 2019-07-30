@@ -20,9 +20,9 @@
                     
                     <h5 class="card-text">
                     @if($user->icon)
-                        <img class="d-block mx-auto" src="{{ asset("storage/icon/$user->id.jpg") }}">
+                        <img class="d-block mx-auto" src={{ $user->icon }}>
                     @else 
-                        <img class="d-block mx-auto" src="{{ asset("images/null-icon.jpg") }}">
+                        <img class="d-block mx-auto" src="http://res.cloudinary.com/ikkoku/image/upload/c_fit,h_256,w_256/null_icon.jpg">
                     @endif 
                         <br>名前：{{ $user->name }}
                     </h5>

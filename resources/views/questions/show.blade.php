@@ -15,9 +15,9 @@
                     
                         <div class="card-body bg-white border">
                             @if($question->user->icon)
-                                <img class="rounded-circle mb-3" src="{{ asset("storage/icon/$question->user_id.jpg") }}">
+                                <img class="rounded-circle mb-3" src="{{ $question->user->icon }}">
                             @else 
-                                <img class="rounded-circle mb-3" src="{{ asset("images/null-icon.jpg") }}" >
+                                <img class="rounded-circle mb-3" src="http://res.cloudinary.com/ikkoku/image/upload/c_fit,h_256,w_256/null_icon.jpg" >
                             @endif
                             投稿者:<a href="{{ route('users.profile', $question->user->id) }}">{{ $question->user->name }}</a>
                             <h5 class="card-title border-bottom">{{ $question->title }}</h5>    
