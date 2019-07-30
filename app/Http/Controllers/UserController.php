@@ -9,6 +9,8 @@ use App\Score;
 use App\Http\Requests\UserRequest;
 use Auth;
 use \Khill\Lavacharts\Lavacharts as Lava;
+use JD\Cloudder\Facades\Cloudder;
+
 
 
 class UserController extends Controller
@@ -74,14 +76,31 @@ class UserController extends Controller
      */
     public function update(User $user, Request $request)
     {
-        if($request->icon){
-            $user->icon = $request->icon->storeAs('public/icon', Auth::user()->id.'.jpg');
-        }
+        // if($request->icon){
+        //     $user->icon = $request->icon->storeAs('public/icon', Auth::user()->id.'.jpg');
+        // }
         $user->name = $request->name;
         $user->twitter_id = $request->twitter_id;
         $user->email = $request->email;
         $user->age = $request->age;
         $user->comment = $request->comment;
+
+        if ($icon = $request->icon) {
+            $image_name = $icon->getRealPath();
+            // Cloudinaryへアップロード
+            Cloudder::upload($image_name, null);
+            list($width, $height) = getimagesize($image_name);
+            // 直前にアップロードした画像のユニークIDを取得します。
+            $publicId = Cloudder::getPublicId();
+            // URLを生成します
+            $logoUrl = Cloudder::show($publicId, [
+                'width'     => $width,
+                'height'    => $height
+            ]);
+
+            $user->icon = $logoUrl;
+        }
+
         $user->save();
 
         return redirect()->route('users.profile', $user->id); 
