@@ -18,18 +18,18 @@
                         <div class="text-center mt-5 mb-5 title-border">まずは質問してみましょう！</div>
                     @endif
 
-                   
+                    @foreach($questions as $question)   
+                    <div>
+                        題名：<a href="{{ route('questions.show', $question->id) }}">{{ $question->title }}</a>
+                    </div>
+                    @if (filled($questions) && !filled($question->answerRequests))
+                        {{-- @php
+                            $flag = 1;    
+                        @endphp --}}
+                        <div class="text-center mt-5 mb-5 title-border">現在リクエストはありません。</div>
+                    @endif
                     
-                    
-
-                    @foreach($questions as $question)
-                        
                         @foreach($question->answerRequests as $answerrequest)
-                        
-                            @if (!$answerrequest))
-                                <div class="text-center mt-5 mb-5 title-border">現在リクエストはありません。</div>
-                            @endif
-
                             @if($answerrequest)
                                 <div class="card-body bg-white border mb-3">
                                     <h5 class="card-title">

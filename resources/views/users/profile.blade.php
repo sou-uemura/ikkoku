@@ -57,40 +57,45 @@
                 {{-- <div class="card-body"> --}}
                     {{-- <div class="card"> --}}
                         {{-- <div class="card-body"> --}}
-            @foreach($user->questions as $question)
-                {{-- <div class="card"> --}}
-                <div class="card-body ">
-                    <div class="card-body profile bg-white clearfix">
-                        <h5 class="card-title title pb-2">{{ $question->title }}</h5>
-                        {{-- @if($question->user->icon)
-                            <img class="mb-3" src="{{ asset("storage/icon/$question->user_id.jpg") }}">
-                        @endif 
-                        <h5 class="card-title">
-                        投稿者:{{ $question->user->name }}
-                        </h5> --}}
-                        <p class="card-text">{{ $question->content }}</p>
+
+                @if (!filled($user->questions))
+                    <div class="text-center mt-5 mb-5 title-border">投稿中の質問はありません</div>
+                @endif
+        
+                @foreach($user->questions as $question)
+                    {{-- <div class="card"> --}}
+                    <div class="card-body ">
+                        <div class="card-body profile bg-white clearfix">
+                            <h5 class="card-title title pb-2">{{ $question->title }}</h5>
+                            {{-- @if($question->user->icon)
+                                <img class="mb-3" src="{{ asset("storage/icon/$question->user_id.jpg") }}">
+                            @endif 
+                            <h5 class="card-title">
+                            投稿者:{{ $question->user->name }}
+                            </h5> --}}
+                            <p class="card-text">{{ $question->content }}</p>
 
 
-                        
-                        @if( $user->id  ===  Auth::id() )
+                            
+                            @if( $user->id  ===  Auth::id() )
+                                <div style="float:right;">
+                                    <form action="{{ route('questions.destroy', $question->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" onclick="return confirm('削除してもよろしいですか？')" class="button_h6 ml-3 delete-button text-white">削除</button>
+                                    </form>
+                                </div>
+                            @endif
                             <div style="float:right;">
-                                <form action="{{ route('questions.destroy', $question->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" onclick="return confirm('削除してもよろしいですか？')" class="button_h6 ml-3 delete-button text-white">削除</button>
-                                </form>
+                                <a href="{{ route('questions.show', $question->id)}}" class="button_h6 bg-white">詳細</a>
                             </div>
-                        @endif
-                        <div style="float:right;">
-                            <a href="{{ route('questions.show', $question->id)}}" class="button_h6 bg-white">詳細</a>
+                        
+
+
                         </div>
-                    
-
-
                     </div>
-                </div>
-                {{-- </div> --}}
-            @endforeach
+                    {{-- </div> --}}
+                @endforeach
                         {{-- </div> --}}
                     {{-- </div> --}}
                 {{-- </div> --}}
