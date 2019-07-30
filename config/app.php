@@ -123,6 +123,8 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+    'log' => env('LOG_OUTPUT', 'errorlog'),
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -133,6 +135,7 @@ return [
     | this array to grant expanded functionality to your applications.
     |
     */
+
 
     'providers' => [
 
