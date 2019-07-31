@@ -21,4 +21,11 @@ class Score extends Model
         return $this->belongsTo('App\User');
     }
 
+    protected $casts = [
+        'easy' => 'integer',
+        'speed' => 'integer',
+        'manner' => 'integer',
+        'understand' => 'integer',
+    ];
+
 }

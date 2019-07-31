@@ -12,7 +12,7 @@ getScoreData(userId).done(function(result) {
     var myChart = new Chart(ctx, {
         type: 'radar', 
         data: { 
-            labels: ['わかりやすさ', 'スピード', 'マナー', '解決度'],
+            labels: ['わかりやすさ', '速度', 'マナー', '解決度'],
             datasets: [{
                 data: userScore,
                 backgroundColor: 'RGBA(255,241,0,0.5)',

@@ -13,13 +13,34 @@ class ScoreController extends Controller
 
     public function create(User $user, AnswerRequest $answerrequest) 
     { 
+        $scores = [
+            [
+                'title' => 'わかりやすさ',
+                'name' => 'easy'
+            ],
+            [
+                'title' => '教える早さ',
+                'name' => 'speed'
+            ],
+            [
+                'title' => 'マナー',
+                'name' => 'manner'
+            ],
+            [
+                'title' => '問題の解決度',
+                'name' => 'understand'
+            ],
+        ];
+
         return view('scores.create' ,[
-            'user' => $user
+            'user' => $user,
+            'scores' => $scores
         ]);
     }
 
     public function store(Request $request)
     {
+
         $score = new score();
 
         $score->user_id = $request->user_id;

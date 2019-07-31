@@ -65,6 +65,7 @@
                             {{-- <button type="button" class="btn btn-white" data-toggle="modal" data-target="#exampleModalScrollable">
                                 使い方
                             </button> --}}
+
                                 
                             <!-- Modal -->
                             <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -89,12 +90,13 @@
                                 </div>
                                 </div>
                             </div>
-                            <li class="nav-item dropdown">
+
+                            {{-- <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
+                                </a> --}}
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <li class="nav-item dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         <button type="button" class="dropdown-item" data-toggle="modal" data-target="#exampleModalScrollable">使い方</button>
                                         <a href="{{ route('questions.create') }}" class="dropdown-item">質問投稿</a>
                                         <a href="{{ route('questions.index') }}" class="dropdown-item">質問一覧</a>
@@ -110,8 +112,8 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
-                                </div>
-                            </li>
+                                </li>
+                            {{-- </li> --}}
                         @endguest
                     </ul>
                 </div>

@@ -23,7 +23,7 @@
                                     @else 
                                         <img class="rounded-circle" src="http://res.cloudinary.com/ikkoku/image/upload/c_fit,h_256,w_256/null_icon.jpg" width="50px" heigth="auto">
                                     @endif
-                                    {{ $question->user->name }}
+                                    <a href="{{ route('users.profile', $question->user->id) }}">{{ $question->user->name }}</a>
                                 </h5>
                                 <h5 class="card-title title">{{ $question->title }}</h5>
                                

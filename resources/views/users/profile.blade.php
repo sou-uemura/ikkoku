@@ -28,7 +28,7 @@
                     </h5>
                     <h5 class="card-text">
                     twitter：<a href="https://twitter.com/{{ $user->twitter_id }}" target="_blank">
-                        ＠{{ $user->twitter_id }}</a>   
+                        {{ $user->twitter_id }}</a>   
                     </h5>
                     <h5 class="card-text">
                     年齢：{{ $user->age }}
