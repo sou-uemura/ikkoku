@@ -53,7 +53,12 @@
                                 </h5><input  class="border" type="text" name="twitter_id" value="{{ $user->twitter_id }}">  
                                 <h5 class="card-title border-bottom mt-3">
                                     年齢<br> 
-                                </h5><input class="border" type="text" name="age" value="{{ $user->age }}">  
+                                </h5><select class="border bg-white" type="number" name="age">
+                                        @for($i = 1; $i < 100; $i++)
+                                            <option>{{ $i }}</option>
+                                        @endfor
+                                    </select>
+                                 {{-- <input class="border" type="text" name="age" value="{{ $user->age }}"> --}}
                                 <h5 class="card-title border-bottom mt-3">
                                     メールアドレス：
                                 </h5><input class="border" type="text" name="email" value="{{ $user->email }}">  
