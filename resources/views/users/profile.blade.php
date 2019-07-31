@@ -109,20 +109,20 @@
                     {{-- <div class="card"> --}}
                         <div class="card-body text-center">
                             <h5 class="card-title">
-                                わかりやすさ： {{ $scores['easy'] }} / 10
+                                わかりやすさ： {{ round($scores['easy']) }} / 10
                             </h5>
                             <h5 class="card-title">
-                                スピード： {{ $scores['speed'] }} / 10
+                                スピード： {{ round($scores['speed']) }} / 10
                             </h5>
                             <h5 class="card-title">
-                                マナー：{{ $scores['manner'] }} / 10
+                                マナー：{{ round($scores['manner']) }} / 10
                             </h5>
                             <h5 class="card-title">
-                                解決度：{{ $scores['understand'] }} / 10
+                                解決度：{{ round($scores['understand']) }} / 10
                             </h5>
                             <br>
                             <h5 class="card-title">
-                                合計： {{ $sum }} / 40
+                                合計： {{ round($sum) }} / 40
                             </h5>
                         </div>
                         <div>

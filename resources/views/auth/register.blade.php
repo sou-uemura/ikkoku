@@ -60,7 +60,14 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-                        <p>※このサービスはtwitterの登録が必要です。</p>
+                        <div class="mt-4 mb-2">
+                            <input class="d-inline w-auto form-control2 @error('check') is-invalid @enderror" type="checkbox" name="check" required autocomplete="new-password">このサービスはtwitterの登録が必要です。
+                            @error('check')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4 text-center mt-3">
                                 <button type="submit" class="button_h6 bg-white">
