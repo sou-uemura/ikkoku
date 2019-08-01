@@ -48,7 +48,13 @@
                                 
                                 <h5 class="card-title border-bottom mt-2">
                                     名前<br>
-                                </h5><input class="border" type="text" name="name" value="{{ $user->name }}">
+                                </h5><input class="border form-control @error('name') is-invalid @enderror" type="text" name="name" value="{{ $user->name }}" required autocomplete="content" autofocus>
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+
                                 <h5 class="card-title border-bottom mt-3">
                                     twitterID(＠以降)<br>
                                 </h5><input  class="border" type="text" name="twitter_id" value="{{ $user->twitter_id }}">  
