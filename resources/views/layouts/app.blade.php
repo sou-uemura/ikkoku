@@ -96,7 +96,7 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a> --}}
 
-                                <li id="" class="nav-item dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <li class="nav-item dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         <button type="button" class="dropdown-item" data-toggle="modal" data-target="#exampleModalScrollable">使い方</button>
                                         <a href="{{ route('questions.create') }}" class="dropdown-item">質問投稿</a>
                                         <a href="{{ route('questions.index') }}" class="dropdown-item">質問一覧</a>

@@ -17,14 +17,15 @@
 
                             <form action="{{ route('users.update', $user->id) }}" enctype="multipart/form-data" method="post">
                                 @csrf
-                                <h5 class="card-title border-bottom">
+                                <h5 class="text-center">
                                     @if($user->icon)
-                                        <img class="d-block mx-auto" src="{{ $user->icon }}">
+                                        <img class="img-fluid mx-auto rounded-circle" style="width:50px; height:50px; object-fit: cover;" src="{{ $user->icon }}">
                                     @else
                                         <img class="d-block mx-auto" src="http://res.cloudinary.com/ikkoku/image/upload/c_fit,h_256,w_256/null_icon.jpg">
                                     @endif
-                                    <br>
-                                    アイコン<br>
+                                <h5>
+                                <h5 class="card-title border-bottom">
+                                    アイコン
                                 </h5>
                                 {{-- こっちボタンは使いたい --}}
                                 <div class="input-group">

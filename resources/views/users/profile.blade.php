@@ -18,12 +18,14 @@
             <div class="card-body">
                 <div class="card-body bg-white profile">
                     
-                    <h5 class="card-text">
+                    <h5 class="card-text text-center">
                     @if($user->icon)
-                        <img class="d-block mx-auto" src={{ $user->icon }}>
+                        <img class="img-fluid  mx-auto rounded-circle" style="width:50px; height:50px; object-fit: cover;" src={{ $user->icon }}>
                     @else 
                         <img class="d-block mx-auto" src="http://res.cloudinary.com/ikkoku/image/upload/c_fit,h_256,w_256/null_icon.jpg">
                     @endif 
+                    </h5>
+                    <h5>
                         <br>名前：{{ $user->name }}
                     </h5>
                     <h5 class="card-text">

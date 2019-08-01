@@ -15,7 +15,7 @@
                     
                         <div class="card-body bg-white border">
                             @if($question->user->icon)
-                                <img class="rounded-circle mb-3" src="{{ $question->user->icon }}">
+                                <img class="rounded-circle mb-3 mx-auto rounded-circle" style="width:50px; height:50px; object-fit: cover;" src="{{ $question->user->icon }}">
                             @else 
                                 <img class="rounded-circle mb-3" src="http://res.cloudinary.com/ikkoku/image/upload/c_fit,h_256,w_256/null_icon.jpg" >
                             @endif

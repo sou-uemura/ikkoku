@@ -10645,11 +10645,11 @@ a.text-dark:focus {
 }
 
 img {
-  width: 50px;
+  /* width: 50px;
   height: auto;
   border: solid 1px rgba(0, 0, 0, 0.1);
   margin-right: 15px;
-  border-radius: 50%;
+  border-radius: 50%; */
 }
 
 .main {
