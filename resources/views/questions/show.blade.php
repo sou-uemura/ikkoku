@@ -19,7 +19,9 @@
                             @else 
                                 <img class="rounded-circle mb-3" src="http://res.cloudinary.com/ikkoku/image/upload/c_fit,h_256,w_256/null_icon.jpg" >
                             @endif
-                            投稿者:<a href="{{ route('users.profile', $question->user->id) }}">{{ $question->user->name }}</a>
+          
+                            投稿者:<a class="ml-1" href="{{ route('users.profile', $question->user->id) }}">{{ $question->user->name }}</a>
+          
                             <h5 class="card-title border-bottom">{{ $question->title }}</h5>    
                             <p class="card-text">{{ $question->content }}</p>
                         </div>

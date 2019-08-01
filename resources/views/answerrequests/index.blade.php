@@ -36,7 +36,7 @@
                                         <a href="{{ route('users.profile', $answerrequest->user->id) }}">
                                         
                                         @if($answerrequest->user->icon)
-                                            <img class="img-fluid  mx-auto rounded-circle" style="width:50px; height:50px; object-fit: cover;" src="{{ $answerrequest->user->icon }}">
+                                            <img class="img-fluid  mx-auto rounded-circle mr-2" style="width:50px; height:50px; object-fit: cover;" src="{{ $answerrequest->user->icon }}">
                                         @else 
                                             <img src="http://res.cloudinary.com/ikkoku/image/upload/c_fit,h_256,w_256/null_icon.jpg">
                                         @endif
